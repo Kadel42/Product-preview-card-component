@@ -103,6 +103,7 @@ select {
 body {
     background-color: var(--color-primary-200);
     padding: 32px 16px;
+    color: var(--color-neutral-400)
 }
 
 .container {
@@ -131,6 +132,7 @@ body {
     font-weight: var(--font-weight-500);
     font-size: var(--font-size-400);
     letter-spacing: 7px;
+    text-transform: uppercase;
 }
 
 h1 {
@@ -139,6 +141,7 @@ h1 {
     font-size: var(--font-size-1000);
     margin-top: 16px;
     margin-bottom: 16px;
+    color: black;
 }
 
 .description {
@@ -178,7 +181,7 @@ button {
     gap: 1rem;
 }
 
-button:hover {
+button:is(:hover, :focus) {
   background-color: var(--color-neutral-600);
 }
 
@@ -187,6 +190,16 @@ button:hover {
 }
 .attribution a {
     color: hsl(228, 45%, 44%);
+}
+
+.visually-hidden:not(:focus):not(:active) {
+  clip: rect(0 0 0 0); 
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap; 
+  width: 1px;
 }
 
 @media (min-width: 650px) {
